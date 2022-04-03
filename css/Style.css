@@ -1580,6 +1580,10 @@ footer.footer .move-up span:hover{
 .token-info{
     display: flex;
 }
+.data-head{
+        text-align: justify;
+        margin-left: 100px;
+}
 }
 /*              Viewport less then or equal to 1130px            */
 
@@ -1596,9 +1600,7 @@ footer.footer .move-up span:hover{
 
     
     }
-    .token-info{
-        justify-content: center;
-    }
+    .token-info
 
 .nav .nav-items .nav-link{
         padding: 1.6rem 0.3rem;
