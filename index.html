@@ -126,11 +126,63 @@
 
 
    </div>
+   <div class="token-info" style="padding-top: 150px;">
+    <div>
+    <div class="chart"
+    style="height:500px;"
+      id="arken-root"
+      data-chain="ethereum"
+      data-mode="dark"
+      data-theme_color=""
+      data-theme_text_color=""
+      data-base_token_address="0x036c3a8bc8327e56564104f658576c995118e9a3"
+      data-quote_token_address="0x036c3a8bc8327e56564104f658576c995118e9a3"
+      data-external_top_token_address="[]"
+      data-custom_image_token="{&quot;0x036c3a8bc8327e56564104f658576c995118e9a3&quot;:&quot;https://burn.ly/images/logo-icon.png&quot;}"
+      data-widget_type="graph"
+      data-graph_range="1"
+      data-max_width="637px"
+      data-height="42.39%"
+      data-background_color_light=""
+      data-background_color_dark=""
+    ></div>
+    <script async src="https://widget.arken.finance/widget.js"></script>
+    </div>
+    <div>
+  <div class="card" id="totalsup" style="background-color:#ffa756;font-size: 30px;"></div>
+  <div class="card" style="background-color:orange;font-size: 30px;"><label for="file">0% BURNED</label>
+<progress id="file" value="" max="1000000000000000" style="">0% BURNED</progress>
+</div>
+  <div class="card" style="background-color:#fe1717"><h3>Minimum Token Supply — 1 Billion (1,000,000,000)</h3></div>
+</div>
+
+
+
+
+   </div>
    <div class="details"><h3>We have coded it within Smart Contract to burn at flat / constant 0.1% burn rate until the available supply is hitting 1 Billion or less.
 It is estimated that we will hit this mark after about 20,000 transactions (Buy or Sell)
 20,000 transactions = 0.0000000001% supply left
 After 20,000 transactions we will be remained with just 0.0000000001% of the initial supply</h3>
    </div>
+
+   
+   <center>
+       <div>
+           <h1>Join Our Community!</h1>
+           <div class="col-md-12 text-center ">
+      <ul class="list-inline social-links">
+        <li><a href="https://github.com/#" class="btn-social btn-outline" data-toggle="tooltip" data-placement="top" title="Github"><i class="icon fab fa-github"></i></a>
+        </li>
+        <li><a href="https://twitter.com/#" class="btn-social btn-outline" title="Twitter"><i class="icon fab fa-twitter"></i></a>
+        </li>
+        
+            <li><a href="#" class="btn-social btn-outline" title="Facebook"><i class="ion fab fa-telegram"></i></a>
+        </li>
+      </ul>
+    </div>
+       </div>
+   </center>
 
     <!-- ------------x---------------  Navigation --------------------------x------------------- -->
 
@@ -152,6 +204,18 @@ After 20,000 transactions we will be remained with just 0.0000000001% of the ini
 
     <!-- Custom Javascript file -->
     <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.34/dist/web3.js"></script>
+    <script src="./js/web3.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+   <script type="text/javascript">
+    burnly_contract.methods.totalSupply().call((error, result)=>{
+    console.log("Total supply : ", result /1e18);
+     document.getElementById("totalsup").innerHTML="Total Supply: "+result /1e18;
+      document.getElementById("file").value = result /1e18;
+
+});
+      
+   </script>
 </body>
 
 </html>
